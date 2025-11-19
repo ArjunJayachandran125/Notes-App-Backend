@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 const User = require("./userModel");
 
-const notesSchema = mongoose.Schema({
+const noteSchema = mongoose.Schema({
     title: {
         type: String,
-        required: [true, "Enter the title for your note"],
-        maxLength: 100,
+        required: [true, "Enter title of the note"]
     },
     body: {
         type: String,
-        required: [true, "Enter your body"],
-        maxLength: 500,
+        required: [true, "Enter the body of your note"]
     },
     summary: {
         type: String,
@@ -18,9 +16,12 @@ const notesSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: [true, "Enter your UserID"],
+        required: [true, "Enter user Id"]
     },
+    file: {
+        type: String
+    }
 }, {timestamps: true});
 
-const Notes = mongoose.model("Notes", notesSchema);
-module.exports = Notes;
+const Note = mongoose.model("Note",noteSchema);
+module.exports = Note;

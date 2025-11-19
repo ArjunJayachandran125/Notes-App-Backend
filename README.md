@@ -1,27 +1,30 @@
 # Notes App API
 
-A secure REST API for creating, reading, updating, and deleting notes.  
-Each note belongs to an authenticated user and all note operations are protected with JWT authentication.  
-Built with **Node.js**, **Express**, and **MongoDB**.
+A secure REST API for creating, reading, updating, and deleting notes.
+Each note belongs to an authenticated user and all note operations are protected with JWT authentication.
+Built with Node.js, Express, and MongoDB, with optional file upload support using Multer.
 
 ## Overview
 
-This project demonstrates a complete backend setup including authentication, protected routes, and error handling.  
-Users can register, log in, and manage their own notes.  
+This project demonstrates a complete backend setup including authentication, protected routes, modular architecture, file upload handling, and centralized error processing.
+Users can register, log in, manage their own notes, and optionally upload files such as images/documents through Multer. 
 
 ## Features
 
 - JWT authentication (register and login)
 - Secure CRUD operations for notes
+- Multer integration for file uploads (stored locally in /uploads)
 - Middleware-based error handling
 - Express-Async-Handler for async control flow
 - Modular MVC structure
+- Environment-based configuration using dotenv
 
 ## Tech Stack
 
 - Node.js
 - Express.js
 - MongoDB + Mongoose
+- Multer
 - JSON Web Token (JWT)
 - bcryptjs
 - dotenv
@@ -55,14 +58,14 @@ DELETE	 /api/notes/:id	        Delete note by ID	           Private
 
 ## Error Handling
 
-Global middleware handles:
-404 (Not Found)
-500 (Internal Server Error)
-Custom validation and authentication errors
+- Global middleware handles:
+- 404 (Not Found)
+- 500 (Internal Server Error)
+- Custom validation and authentication errors
 
 ## Future Enhancements
 
-Pagination and filtering for notes
-Search functionality
-Role-based access control (Admin)
-File upload support (Multer)
+- Pagination and filtering for notes
+- Search functionality
+- Role-based access control (Admin)
+- File upload support (Multer)
